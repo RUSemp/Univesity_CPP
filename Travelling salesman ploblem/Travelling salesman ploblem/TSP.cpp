@@ -21,6 +21,7 @@ namespace foo {
                 {
                     _cal_map[row][col] = 999;
                     _ways[row][col] = 999;
+                    std::cout << _ways[row][col] << " ";
                     continue;
                 }
 
@@ -148,6 +149,11 @@ namespace foo {
     {
         _roads[_numr][0] = _rowf;
         _roads[_numr][1] = _colf;
+
+        std::cout << "Сохранена дорога: " << _roads[_numr][0] << "---->" << _roads[_numr][1] << std::endl;
+        std::cout << "Длинна: " << _ways[_roads[_numr][0]][_roads[_numr][1]] << std::endl;
+        std::cout << std::endl;
+
         _numr++;
     }
 
@@ -286,9 +292,11 @@ namespace foo {
         {
             for (int column = 0; column < _num + 1; column++)
             {
-                std::cout << _cal_map[row][column] << " ";
+                std::cout.width(4);
+                std::cout << _cal_map[row][column];
             }
             std::cout << std::endl;
         }
+        std::cout << std::endl;
     }
 }

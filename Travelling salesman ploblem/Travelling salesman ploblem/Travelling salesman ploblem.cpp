@@ -26,6 +26,8 @@ int main()
         way.min_way();
         way.fine();
 
+        way.show_cal_map();
+
         foo::TSP way1(0, 999), way2(0, 999), sub_way1(0, 999), sub_way2(0, 999);
 
         way1.copy(way);
@@ -35,6 +37,8 @@ int main()
         way1.matrix_reduction();
         way1.reduction();
         way1.min_way();
+
+        way1.show_cal_map();
 
         way2.delete_road();
         way2.new_way();
@@ -48,6 +52,9 @@ int main()
 
                 sub_way1.save_road();
                 sub_way1.matrix_reduction();
+
+                sub_way1.show_cal_map();
+
                 sub_way1.reduction();
                 sub_way1.min_way();
 
@@ -68,10 +75,14 @@ int main()
                 sub_way1.copy(way2);
                 sub_way2.copy(way2);
 
+                way2.show_cal_map();
+
                 sub_way1.save_road();
                 sub_way1.matrix_reduction();
                 sub_way1.reduction();
                 sub_way1.min_way();
+
+
 
                 if (sub_way1.get_min_way() < way1.get_min_way())
                 {
